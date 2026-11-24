@@ -1,0 +1,15 @@
+5x2cv repetition 1 done
+5x2cv repetition 2 done
+5x2cv repetition 3 done
+5x2cv repetition 4 done
+5x2cv repetition 5 done
+             model                           Model  Accuracy      Acc 95% CI   Macro-P   Macro-R  Macro-F1       F1 95% CI  Weighted-F1  ROC-AUC (macro OvR)  ROC-AUC (micro)       ECE
+0           logreg    TF-IDF + Logistic Regression  0.938776  [0.912, 0.963]  0.940504  0.921720  0.927973  [0.887, 0.958]     0.937826             0.996422         0.997155  0.116560
+1              svm             TF-IDF + Linear SVM  0.938776  [0.912, 0.963]  0.937323  0.913112  0.922060  [0.877, 0.954]     0.938307             0.996125         0.996844  0.150231
+2               rf          TF-IDF + Random Forest  0.860544  [0.820, 0.898]  0.887863  0.835042  0.848382  [0.795, 0.891]     0.855796             0.986941         0.989823  0.377855
+3     clinicalbert                Bio_ClinicalBERT  0.904762  [0.871, 0.935]  0.879615  0.914894  0.893588  [0.849, 0.928]     0.906362             0.989785         0.988515  0.032489
+4       pubmedbert         PubMedBERT (BiomedBERT)  0.942177  [0.912, 0.966]  0.926893  0.945655  0.934670  [0.898, 0.963]     0.943103             0.991529         0.994668  0.035433
+5          biobert                    BioBERT v1.2  0.918367  [0.888, 0.946]  0.891422  0.916052  0.901631  [0.855, 0.936]     0.919234             0.992826         0.989757  0.054889
+6          roberta                    RoBERTa-base  0.894558  [0.857, 0.929]  0.874964  0.888918  0.879858  [0.830, 0.921]     0.895963             0.989236         0.991608  0.058714
+7  logreg_trunc256  TF-IDF + LR (first 256 tokens)  0.891156  [0.854, 0.929]  0.906589  0.868318  0.881057  [0.828, 0.921]     0.892203             0.993398         0.993409  0.087447
+{'best_overall': 'pubmedbert', 'best_transformer': 'pubmedbert', 'error_analysis': {'n_errors': 17, 'mean_conf_wrong': 0.7821481227874756, 'mean_conf_right': 0.9860237240791321, 'errors_conf_gt_0.9': 6}}

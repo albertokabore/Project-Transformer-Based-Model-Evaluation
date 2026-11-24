@@ -1,0 +1,1514 @@
+{
+  "scope": "Rebuilt splits; recomputed saved-prediction metrics, tests and subgroup results; verified classical model predictions. No transformer retraining or timing rerun.",
+  "checks": [
+    {
+      "check": "raw-data audit reproduces saved dataset statistics",
+      "passed": true
+    },
+    {
+      "check": "raw data reproduces train rows and order",
+      "passed": true
+    },
+    {
+      "check": "raw data reproduces val rows and order",
+      "passed": true
+    },
+    {
+      "check": "raw data reproduces test rows and order",
+      "passed": true
+    },
+    {
+      "check": "raw data reproduces ood rows and order",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: train/val",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: train/test",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: train/ood",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: val/test",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: val/ood",
+      "passed": true
+    },
+    {
+      "check": "no exact normalized text overlap: test/ood",
+      "passed": true
+    },
+    {
+      "check": "logreg/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "logreg: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "logreg: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "logreg: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "logreg: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "logreg: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "logreg: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "logreg: ECE",
+      "passed": true
+    },
+    {
+      "check": "logreg: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "logreg: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "logreg: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "logreg: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "logreg: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "logreg: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "svm/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "svm: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "svm: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "svm: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "svm: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "svm: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "svm: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "svm: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "svm: ECE",
+      "passed": true
+    },
+    {
+      "check": "svm: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "svm: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "svm: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "svm: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "svm: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "svm: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "rf/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "rf: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "rf: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "rf: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "rf: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "rf: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "rf: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "rf: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "rf: ECE",
+      "passed": true
+    },
+    {
+      "check": "rf: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "rf: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "rf: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "rf: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "rf: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "rf: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: ECE",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: ECE",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "biobert/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "biobert: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "biobert: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "biobert: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "biobert: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "biobert: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "biobert: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "biobert: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "biobert: ECE",
+      "passed": true
+    },
+    {
+      "check": "biobert: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "biobert: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "biobert: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "biobert: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "biobert: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "biobert: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "roberta/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/ood: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/typo_10: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/typo_25: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/word_drop_20: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/keyword_mask: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta/gender_swap: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "roberta: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "roberta: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "roberta: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "roberta: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "roberta: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "roberta: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "roberta: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "roberta: ECE",
+      "passed": true
+    },
+    {
+      "check": "roberta: robustness/typo_10",
+      "passed": true
+    },
+    {
+      "check": "roberta: robustness/typo_25",
+      "passed": true
+    },
+    {
+      "check": "roberta: robustness/word_drop_20",
+      "passed": true
+    },
+    {
+      "check": "roberta: robustness/keyword_mask",
+      "passed": true
+    },
+    {
+      "check": "roberta: OOD AUROC",
+      "passed": true
+    },
+    {
+      "check": "roberta: OOD FPR",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256/test: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256/val: valid probability shape and values",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: Accuracy",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: Macro-P",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: Macro-R",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: Macro-F1",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: Weighted-F1",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: ROC-AUC (macro OvR)",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: ROC-AUC (micro)",
+      "passed": true
+    },
+    {
+      "check": "logreg_trunc256: ECE",
+      "passed": true
+    },
+    {
+      "check": "reported winner matches validation-only selection",
+      "passed": true
+    },
+    {
+      "check": "logreg: validation table",
+      "passed": true
+    },
+    {
+      "check": "svm: validation table",
+      "passed": true
+    },
+    {
+      "check": "rf: validation table",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: validation table",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: validation table",
+      "passed": true
+    },
+    {
+      "check": "biobert: validation table",
+      "passed": true
+    },
+    {
+      "check": "roberta: validation table",
+      "passed": true
+    },
+    {
+      "check": "biobert: logged selected validation F1",
+      "passed": true
+    },
+    {
+      "check": "biobert: selected learning rate and epoch match training histories",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: logged selected validation F1",
+      "passed": true
+    },
+    {
+      "check": "clinicalbert: selected learning rate and epoch match training histories",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: logged selected validation F1",
+      "passed": true
+    },
+    {
+      "check": "pubmedbert: selected learning rate and epoch match training histories",
+      "passed": true
+    },
+    {
+      "check": "roberta: logged selected validation F1",
+      "passed": true
+    },
+    {
+      "check": "roberta: selected learning rate and epoch match training histories",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/svm: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/svm: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/rf: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/rf: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/clinicalbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/clinicalbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/pubmedbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/pubmedbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/biobert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/biobert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/logreg/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/rf: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/rf: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/clinicalbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/clinicalbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/pubmedbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/pubmedbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/biobert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/biobert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/svm/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/clinicalbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/clinicalbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/pubmedbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/pubmedbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/biobert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/biobert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/rf/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/pubmedbert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/pubmedbert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/biobert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/biobert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/clinicalbert/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/pubmedbert/biobert: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/pubmedbert/biobert: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/pubmedbert/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/pubmedbert/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar/biobert/roberta: discordant counts",
+      "passed": true
+    },
+    {
+      "check": "McNemar/biobert/roberta: p",
+      "passed": true
+    },
+    {
+      "check": "McNemar Holm adjustment",
+      "passed": true
+    },
+    {
+      "check": "CV/logreg/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/logreg/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/logreg/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/logreg/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/svm/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/svm/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/svm/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/svm/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/rf/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/rf/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/rf/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/rf/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/clinicalbert_frozen/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/clinicalbert_frozen/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/clinicalbert_frozen/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/clinicalbert_frozen/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/pubmedbert_frozen/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/pubmedbert_frozen/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/pubmedbert_frozen/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/pubmedbert_frozen/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/biobert_frozen/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/biobert_frozen/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/biobert_frozen/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/biobert_frozen/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/roberta_frozen/5x2cv/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/roberta_frozen/5x2cv/sd",
+      "passed": true
+    },
+    {
+      "check": "CV/roberta_frozen/10-fold/mean",
+      "passed": true
+    },
+    {
+      "check": "CV/roberta_frozen/10-fold/sd",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/svm",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/svm",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/rf",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/rf",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/logreg/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/logreg/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/svm/rf",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/svm/rf",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/svm/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/svm/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/svm/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/svm/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/svm/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/svm/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/svm/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/svm/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/rf/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/rf/clinicalbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/rf/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/rf/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/rf/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/rf/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/rf/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/rf/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/clinicalbert_frozen/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/clinicalbert_frozen/pubmedbert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/clinicalbert_frozen/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/clinicalbert_frozen/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/clinicalbert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/clinicalbert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/pubmedbert_frozen/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/pubmedbert_frozen/biobert_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/pubmedbert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/pubmedbert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "5x2cv/biobert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "corrected CV/biobert_frozen/roberta_frozen",
+      "passed": true
+    },
+    {
+      "check": "CV/5x2cv p (Holm)",
+      "passed": true
+    },
+    {
+      "check": "CV/corrected p (Holm)",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/sex: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/sex: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/sex: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/logreg/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/svm/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/rf/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/clinicalbert/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/pubmedbert/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/biobert/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/age_group: group accuracy",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/age_group: DP",
+      "passed": true
+    },
+    {
+      "check": "fairness/roberta/age_group: EO",
+      "passed": true
+    },
+    {
+      "check": "gender swap/logreg",
+      "passed": true
+    },
+    {
+      "check": "gender swap/svm",
+      "passed": true
+    },
+    {
+      "check": "gender swap/rf",
+      "passed": true
+    },
+    {
+      "check": "gender swap/clinicalbert",
+      "passed": true
+    },
+    {
+      "check": "gender swap/pubmedbert",
+      "passed": true
+    },
+    {
+      "check": "gender swap/biobert",
+      "passed": true
+    },
+    {
+      "check": "gender swap/roberta",
+      "passed": true
+    },
+    {
+      "check": "quantized PubMedBERT F1",
+      "passed": true
+    },
+    {
+      "check": "logreg: model reproduces saved test probabilities",
+      "passed": true
+    },
+    {
+      "check": "svm: model reproduces saved test probabilities",
+      "passed": true
+    },
+    {
+      "check": "rf: model reproduces saved test probabilities",
+      "passed": true
+    }
+  ],
+  "passed": 359,
+  "failed": 0,
+  "validation_selected_model": "pubmedbert",
+  "mlflow": {
+    "run_status_counts": {
+      "FINISHED": 18,
+      "RUNNING": 1
+    },
+    "metric_records": 399
+  },
+  "sha256": {
+    "data/raw/mtsamples.csv": "a92cb78569f460606661ee7da50c92305b60d0fac2be4b06c8d2de0f234612d4",
+    "data/processed/test.csv": "9de6521f3ca98219bdc38f1e2e68e0b53ddea463b1ad523dd3348fec175b71ff",
+    "results/preds/biobert/gender_swap.npy": "924351e7be0c43157bd76886d8f749bc6e0dfa46d781b20fca864f9a96ff25de",
+    "results/preds/biobert/keyword_mask.npy": "f55d5f426815bedd620d568f273172e26f865caa7562932de5a52e514528ceed",
+    "results/preds/biobert/ood.npy": "7f3fec8314434c2c293c984727610ab5e20d11ef8edd5b6543db68f822927fea",
+    "results/preds/biobert/test.npy": "e7dee45d471fd15f6423a5b07e5ee1f7b466037a9b911515dede005a1b6ead72",
+    "results/preds/biobert/typo_10.npy": "0b485f5b1f5daa3bfadfcd4c266e0ed16c29727fbf9eb4ca98370ce7cbf15668",
+    "results/preds/biobert/typo_25.npy": "6f65cc880adfceff227d6f63e62ba5b5fd34da3d8ab98b86ad1dceed86bd7a4e",
+    "results/preds/biobert/val.npy": "2ac06b3be311028d2e9021a616ba113039f4be77e313f403f4abd57ab567a215",
+    "results/preds/biobert/word_drop_20.npy": "e587f3089d3e1f3b7b527d3d5acdb0eab03b1ec5432393b8300fa077b9fb85fd",
+    "results/preds/clinicalbert/gender_swap.npy": "c7f37853ab52c9785cc7584b05d592b2e90f2ec3d4b42fe917e1aff5d033b734",
+    "results/preds/clinicalbert/keyword_mask.npy": "caa6b932d32dd82c70ebeb77a0a001136dd96832f40b63e27ec62fdc8e14109d",
+    "results/preds/clinicalbert/ood.npy": "15030d254373d2c5127c8de3060d67d9e9a4c8fa1bcbb6676089685435814fff",
+    "results/preds/clinicalbert/test.npy": "8e8e1bbb4745c7694c602fd964dc26faed9baccd75f626bab643626670f4d99b",
+    "results/preds/clinicalbert/typo_10.npy": "5912b70eb37e8de8a4fa58a19daea56e66124f51905b79ec00b0d1dc0bda7da7",
+    "results/preds/clinicalbert/typo_25.npy": "3434aeea5bf4f5964b83e1a63176a8906031a7b81000b003f5529db08c77e7b2",
+    "results/preds/clinicalbert/val.npy": "7002d3558976794f03c0cca9c02fbe2a0e288725a27ab43cb865af30dac1ce31",
+    "results/preds/clinicalbert/word_drop_20.npy": "a7ac6c57b192c733f918f6c942fe62d20837771f1212169b4f5b8d8a51512b1f",
+    "results/preds/logreg/gender_swap.npy": "207831218858fa530b0f70792768e67b72e2efd4700db8063abe4f963e917de7",
+    "results/preds/logreg/keyword_mask.npy": "c42c2bcdefa5c052e7bb8263beca3b8089e1b5fda083210f9cc2d78dc5f671dc",
+    "results/preds/logreg/ood.npy": "257a27eee7f7f300b5adacee358a3fe03bdda20f9a275126f9a8d4f6c2d1535e",
+    "results/preds/logreg/test.npy": "4f112bc1512f5388f64857926bd4dcee295c2b0367ca1804974b0502231922d8",
+    "results/preds/logreg/typo_10.npy": "d4787dd812b2568a48a7d3b86d8a2e46e0a7143fda7aa4905f106607ed563285",
+    "results/preds/logreg/typo_25.npy": "67a7ac2d73172c142f8c7c8fefe34cfdd59d1fcfecc1ee1ec41711602d64c785",
+    "results/preds/logreg/val.npy": "73bbba35816a215899af4e02e7570244e4f35f9823dfeacd33b99bb9507345a9",
+    "results/preds/logreg/word_drop_20.npy": "9ef5a20c16372d8a41280485d55f683267fc5623000193019414ff7954b8dfae",
+    "results/preds/logreg_trunc256/test.npy": "1ff6f38d13fb140fa80fb66ac270bf21a285ae47df3b84c86e352dd560a57d5b",
+    "results/preds/logreg_trunc256/val.npy": "581d88cc19be4f15282ced3c3b722de46fecefe011abaacf1fe11b2d2511e36a",
+    "results/preds/pubmedbert/gender_swap.npy": "2277e9d939d22bd44e94644470cc58c29f3fb072f38b4dc04f93e2a0a2cbaccf",
+    "results/preds/pubmedbert/keyword_mask.npy": "f9acd3acbfdaf91d5110287aeaf62c5531fd19535f74932b2b57ea2dfccb5255",
+    "results/preds/pubmedbert/ood.npy": "9c66c128d6a5aef8e62f724722b0d2eb1d4d94dff2075c973f5edbf0ef1577e5",
+    "results/preds/pubmedbert/test.npy": "7aa721938cdedb5e71e948460c49db68e49f6b2111e982478b56d418600d7f0f",
+    "results/preds/pubmedbert/test_int8.npy": "184789eaf547ca813998807967886cac775d2338aa05fcafacd4e74a7166de83",
+    "results/preds/pubmedbert/typo_10.npy": "0459798a872d69db052b4c8695fb285765cd9963c125cbeec46e8c837e77a585",
+    "results/preds/pubmedbert/typo_25.npy": "7e4406125a6859fab04231560466a085d500e4abebfc1f5122335ee0fb1abf31",
+    "results/preds/pubmedbert/val.npy": "0d72ae059da326b186693676cf7c937e9e7bd21665ab8c4ed2211a81653acec5",
+    "results/preds/pubmedbert/word_drop_20.npy": "1dd682d4449860921396236486415ccae218ea60929bc341643733b5309c044e",
+    "results/preds/rf/gender_swap.npy": "2bf1d8b597e63ea64e672737caa6df0861584d8b04062ec3c5aefbd743c38f0d",
+    "results/preds/rf/keyword_mask.npy": "216849ddb474f9a7f722b65aad8b95ee0ae08d26cf8e0cbeec93205c41010047",
+    "results/preds/rf/ood.npy": "cf54e8e6ad122f1494fbea6dc27f7e3f0309ffc608200f508b7153fa9190051d",
+    "results/preds/rf/test.npy": "c528ca9afd2ab2f522bf20602e8f354e7da7ceb848acbddd1d76b93280650927",
+    "results/preds/rf/typo_10.npy": "83482db6b10fc72392827568337df5d1b033d847baf3ba8ecf5300d4c53e52b7",
+    "results/preds/rf/typo_25.npy": "042559127ea07b7a4620c42eb7868e61d2cc97d8e16aaee5f46600bc5443cde2",
+    "results/preds/rf/val.npy": "4934f010316bf52a0de3582a96c0aae12e6983d225a6682c63845f729f92eb39",
+    "results/preds/rf/word_drop_20.npy": "4bdcc437f47674f653aafcb751a52eb83b05a07d3e709f403e58b5c17885bc77",
+    "results/preds/roberta/gender_swap.npy": "36210da84baec6b1c99823c0b70773dcec2582c1f7aa54d9850c08fcc3c2ed92",
+    "results/preds/roberta/keyword_mask.npy": "562cdbf9d79f3b3c55b1168caf1a556a70d445ec0a5bd6b2c4ab322eb4b5e58c",
+    "results/preds/roberta/ood.npy": "171c76f053b5511e83ee0cc0d7ebedf1d7f5600a83052de9c53bc94abdeaeff8",
+    "results/preds/roberta/test.npy": "5a12807efa470f9069151ecb5322235ba646ea119754058de307906edd966115",
+    "results/preds/roberta/typo_10.npy": "f088994f9ab1426884ccbce25f6ce21bda838e21fff6c3f6c4a068475f8fc61c",
+    "results/preds/roberta/typo_25.npy": "294c4685d91384c8c29b34e20701fc3acc9cca22d7089be056e92c24f9d2968a",
+    "results/preds/roberta/val.npy": "f86d5a89053e2ab427758f0e85be9774ba187034e095c49ae4a3b3ba24b1d6bc",
+    "results/preds/roberta/word_drop_20.npy": "e8585db3620aa55bd0b76ce778a110108f373299bf80e6edbe0252e6c9fc25f0",
+    "results/preds/svm/gender_swap.npy": "747979c5cf05f7ec8302d4174c966a080b2354848da8a629f2e5e8077d434cc6",
+    "results/preds/svm/keyword_mask.npy": "a395ae5012fd90e1b914d00e181c14432467a3b9b86c66c5df9bc420650d47fe",
+    "results/preds/svm/ood.npy": "a6e6d31d1ecbfe4e7019c4f7b8fc6b42f5f83be89e33a84db10d271317ab3688",
+    "results/preds/svm/test.npy": "029fddd5218b86a05a1f3074c09295b778a085a67910d8a5101290963745dce4",
+    "results/preds/svm/typo_10.npy": "1348ebb66b229715cf517d9c937f539f71e65b4e6e8e75db8d54a83abaf9553b",
+    "results/preds/svm/typo_25.npy": "b08c203bd474f26b8f39df751e10fe318796b8e2ab2d53de454d5e9d282ebf9c",
+    "results/preds/svm/val.npy": "6a7150fee4c6e5c15d611788efb096dc186c4c5fc657581631683e516b80e108",
+    "results/preds/svm/word_drop_20.npy": "8a05eca84aaba35ed85744c5681a60893b290fed01c74181b64f60b30b0cbb1b"
+  }
+}

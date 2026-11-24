@@ -1,0 +1,10 @@
+{
+  "best_overall": "pubmedbert",
+  "best_transformer": "pubmedbert",
+  "error_analysis": {
+    "n_errors": 17,
+    "mean_conf_wrong": 0.7821481227874756,
+    "mean_conf_right": 0.9860237240791321,
+    "errors_conf_gt_0.9": 6
+  }
+}

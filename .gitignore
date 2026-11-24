@@ -221,3 +221,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- project artifacts (large / regenerable) ---
+cache/
+models/*.pt
+models/*.joblib
+mlflow.db
+mlruns/
+data/raw/

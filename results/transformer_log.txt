@@ -1,0 +1,96 @@
+[18:53:07] clinicalbert: cached train (1025 docs) in 807s
+[18:54:29] clinicalbert: cached val (147 docs) in 82s
+[18:57:04] clinicalbert: cached test (294 docs) in 156s
+[19:00:49] clinicalbert: cached ood (279 docs) in 224s
+[19:04:10] clinicalbert: cached typo_10 (294 docs) in 201s
+[19:06:50] clinicalbert: cached typo_25 (294 docs) in 160s
+[19:09:11] clinicalbert: cached word_drop_20 (294 docs) in 141s
+[19:12:17] clinicalbert: cached keyword_mask (294 docs) in 186s
+[19:14:51] clinicalbert: cached gender_swap (294 docs) in 154s
+[19:23:06] clinicalbert lr=3e-05 epoch 1: loss=2.3895 val_f1=0.2911 val_loss=2.2244 (459s)
+[19:29:25] clinicalbert lr=3e-05 epoch 2: loss=1.5710 val_f1=0.7811 val_loss=0.6628 (378s)
+[19:36:08] clinicalbert lr=3e-05 epoch 3: loss=0.5140 val_f1=0.8810 val_loss=0.3274 (403s)
+[19:41:31] clinicalbert lr=3e-05 epoch 4: loss=0.2941 val_f1=0.8785 val_loss=0.2770 (323s)
+[19:56:55] clinicalbert lr=3e-05 epoch 5: loss=0.2252 val_f1=0.9096 val_loss=0.2696 (924s)
+[20:01:51] clinicalbert lr=3e-05 epoch 6: loss=0.1852 val_f1=0.9090 val_loss=0.2627 (296s)
+[20:10:23] clinicalbert lr=0.0001 epoch 1: loss=1.9622 val_f1=0.8561 val_loss=0.4789 (510s)
+[20:15:44] clinicalbert lr=0.0001 epoch 2: loss=0.3853 val_f1=0.7959 val_loss=0.5090 (321s)
+[20:31:58] clinicalbert lr=0.0001 epoch 3: loss=0.1590 val_f1=0.8761 val_loss=0.3456 (974s)
+[20:41:50] clinicalbert lr=0.0001 epoch 4: loss=0.0640 val_f1=0.8815 val_loss=0.3374 (592s)
+[20:53:13] clinicalbert lr=0.0001 epoch 5: loss=0.0290 val_f1=0.8729 val_loss=0.3323 (682s)
+[21:01:58] clinicalbert lr=0.0001 epoch 6: loss=0.0133 val_f1=0.8815 val_loss=0.3469 (525s)
+[21:01:58] clinicalbert lr=0.0001: early stopping at epoch 6 (best epoch 4)
+[21:05:25] clinicalbert: done. best lr=3e-05 epoch=5 val_f1=0.9096
+[21:16:41] pubmedbert: cached train (1025 docs) in 671s
+[21:18:34] pubmedbert: cached val (147 docs) in 113s
+[21:21:47] pubmedbert: cached test (294 docs) in 193s
+[21:25:08] pubmedbert: cached ood (279 docs) in 202s
+[21:28:18] pubmedbert: cached typo_10 (294 docs) in 189s
+[21:32:09] pubmedbert: cached typo_25 (294 docs) in 231s
+[21:35:07] pubmedbert: cached word_drop_20 (294 docs) in 178s
+[21:37:58] pubmedbert: cached keyword_mask (294 docs) in 171s
+[21:40:34] pubmedbert: cached gender_swap (294 docs) in 156s
+[21:46:43] pubmedbert lr=3e-05 epoch 1: loss=2.2876 val_f1=0.7108 val_loss=1.5417 (365s)
+[21:52:16] pubmedbert lr=3e-05 epoch 2: loss=0.7313 val_f1=0.8765 val_loss=0.3392 (333s)
+[21:58:14] pubmedbert lr=3e-05 epoch 3: loss=0.2973 val_f1=0.9009 val_loss=0.2398 (358s)
+[22:04:03] pubmedbert lr=3e-05 epoch 4: loss=0.2051 val_f1=0.8934 val_loss=0.2214 (348s)
+[22:09:37] pubmedbert lr=3e-05 epoch 5: loss=0.1621 val_f1=0.9009 val_loss=0.1982 (334s)
+[22:09:37] pubmedbert lr=3e-05: early stopping at epoch 5 (best epoch 3)
+[22:16:45] pubmedbert lr=0.0001 epoch 1: loss=1.6238 val_f1=0.8258 val_loss=0.3611 (423s)
+[22:23:44] pubmedbert lr=0.0001 epoch 2: loss=0.2722 val_f1=0.8729 val_loss=0.2934 (419s)
+[22:31:16] pubmedbert lr=0.0001 epoch 3: loss=0.1302 val_f1=0.9128 val_loss=0.1845 (450s)
+[22:37:43] pubmedbert lr=0.0001 epoch 4: loss=0.0546 val_f1=0.9230 val_loss=0.1795 (387s)
+[22:46:42] pubmedbert lr=0.0001 epoch 5: loss=0.0244 val_f1=0.9289 val_loss=0.1543 (538s)
+[22:55:33] pubmedbert lr=0.0001 epoch 6: loss=0.0156 val_f1=0.9358 val_loss=0.1601 (531s)
+[22:58:47] pubmedbert: done. best lr=0.0001 epoch=6 val_f1=0.9358
+[23:09:44] biobert: cached train (1025 docs) in 652s
+[23:10:56] biobert: cached val (147 docs) in 72s
+[23:15:34] biobert: cached test (294 docs) in 278s
+[23:18:01] biobert: cached ood (279 docs) in 146s
+[23:20:14] biobert: cached typo_10 (294 docs) in 133s
+[23:22:48] biobert: cached typo_25 (294 docs) in 154s
+[23:25:39] biobert: cached word_drop_20 (294 docs) in 170s
+[23:28:30] biobert: cached keyword_mask (294 docs) in 171s
+[23:31:03] biobert: cached gender_swap (294 docs) in 154s
+[23:38:11] biobert lr=3e-05 epoch 1: loss=2.3757 val_f1=0.3520 val_loss=2.1557 (423s)
+[23:47:36] biobert lr=3e-05 epoch 2: loss=1.2413 val_f1=0.7810 val_loss=0.5236 (564s)
+[23:54:40] biobert lr=3e-05 epoch 3: loss=0.4351 val_f1=0.8294 val_loss=0.3889 (423s)
+[00:04:01] biobert lr=3e-05 epoch 4: loss=0.2909 val_f1=0.8400 val_loss=0.3100 (561s)
+[00:13:06] biobert lr=3e-05 epoch 5: loss=0.2209 val_f1=0.8660 val_loss=0.3202 (544s)
+[00:21:08] biobert lr=3e-05 epoch 6: loss=0.1808 val_f1=0.8589 val_loss=0.3043 (482s)
+[00:28:21] biobert lr=0.0001 epoch 1: loss=1.8492 val_f1=0.7862 val_loss=0.5044 (427s)
+[00:35:26] biobert lr=0.0001 epoch 2: loss=0.3898 val_f1=0.7988 val_loss=0.4938 (424s)
+[00:41:45] biobert lr=0.0001 epoch 3: loss=0.1733 val_f1=0.8633 val_loss=0.2904 (378s)
+[00:48:30] biobert lr=0.0001 epoch 4: loss=0.0635 val_f1=0.8786 val_loss=0.3120 (405s)
+[00:54:26] biobert lr=0.0001 epoch 5: loss=0.0264 val_f1=0.8863 val_loss=0.3483 (356s)
+[01:00:59] biobert lr=0.0001 epoch 6: loss=0.0129 val_f1=0.8859 val_loss=0.3399 (392s)
+[01:03:52] biobert: done. best lr=0.0001 epoch=5 val_f1=0.8863
+[01:25:24] roberta: cached train (1025 docs) in 1288s
+[01:26:36] roberta: cached val (147 docs) in 71s
+[07:56:48] roberta: cached test (294 docs) in 23413s
+[08:03:34] roberta: cached ood (279 docs) in 406s
+[08:07:01] roberta: cached typo_10 (294 docs) in 207s
+[08:09:51] roberta: cached typo_25 (294 docs) in 169s
+[08:13:24] roberta: cached word_drop_20 (294 docs) in 213s
+[08:18:40] roberta: cached keyword_mask (294 docs) in 316s
+[08:22:06] roberta: cached gender_swap (294 docs) in 206s
+[08:29:01] roberta lr=3e-05 epoch 1: loss=2.3761 val_f1=0.4433 val_loss=2.1263 (410s)
+[08:40:03] roberta lr=3e-05 epoch 2: loss=1.2393 val_f1=0.7062 val_loss=0.6851 (662s)
+[08:46:36] roberta lr=3e-05 epoch 3: loss=0.5998 val_f1=0.7760 val_loss=0.5226 (392s)
+[08:54:12] roberta lr=3e-05 epoch 4: loss=0.4251 val_f1=0.8041 val_loss=0.4229 (456s)
+[09:03:12] roberta lr=3e-05 epoch 5: loss=0.3565 val_f1=0.7891 val_loss=0.4162 (539s)
+[10:47:00] roberta: previous run interrupted at epoch 5 of lr=3e-05 (process terminated); restarting training from the complete cache
+[10:54:31] roberta lr=3e-05 epoch 1: loss=2.3761 val_f1=0.4433 val_loss=2.1263 (407s)
+[11:04:05] roberta lr=3e-05 epoch 2: loss=1.2393 val_f1=0.7062 val_loss=0.6851 (573s)
+[11:13:18] roberta lr=3e-05 epoch 3: loss=0.5998 val_f1=0.7760 val_loss=0.5226 (551s)
+[11:22:10] roberta lr=3e-05 epoch 4: loss=0.4251 val_f1=0.8041 val_loss=0.4229 (532s)
+[11:28:48] roberta lr=3e-05 epoch 5: loss=0.3565 val_f1=0.7891 val_loss=0.4162 (398s)
+[11:36:12] roberta lr=3e-05 epoch 6: loss=0.3003 val_f1=0.8100 val_loss=0.3991 (444s)
+[11:40:36] roberta lr=0.0001 epoch 1: loss=1.8725 val_f1=0.7147 val_loss=0.6199 (260s)
+[11:49:09] roberta lr=0.0001 epoch 2: loss=0.5144 val_f1=0.7873 val_loss=0.5840 (513s)
+[11:53:18] roberta lr=0.0001 epoch 3: loss=0.2899 val_f1=0.8257 val_loss=0.4561 (249s)
+[11:59:34] roberta lr=0.0001 epoch 4: loss=0.1417 val_f1=0.8533 val_loss=0.3339 (376s)
+[12:05:16] roberta lr=0.0001 epoch 5: loss=0.0700 val_f1=0.8417 val_loss=0.3808 (342s)
+[12:11:23] roberta lr=0.0001 epoch 6: loss=0.0364 val_f1=0.8478 val_loss=0.3845 (366s)
+[12:11:23] roberta lr=0.0001: early stopping at epoch 6 (best epoch 4)
+[12:14:40] roberta: done. best lr=0.0001 epoch=4 val_f1=0.8533

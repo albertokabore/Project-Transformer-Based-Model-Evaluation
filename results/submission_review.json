@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-24",
+  "report": "report/Technical_Report.docx",
+  "report_sections_present": [
+    "Abstract",
+    "Introduction",
+    "Methodology and results",
+    "Discussion",
+    "Final insights",
+    "Recommendations",
+    "Conclusions",
+    "References"
+  ],
+  "notebook_abstract_present": false,
+  "notebook_final_insight_bullets": 6,
+  "notebook_final_insight_word_count": 300,
+  "observation_blocks": 8,
+  "observation_words_per_block": 50,
+  "report_tables": 16,
+  "report_embedded_figures": 11,
+  "executed_notebook_code_cells": 9,
+  "preserved_code_outputs_and_result_tables": true,
+  "saved_evidence_audit_checks_passed": 359,
+  "remaining_assignment_gaps": [
+    "Labels measure specialty classification; no adjudicated diagnosis-support outcomes.",
+    "Regex PHI screening is unvalidated for completeness.",
+    "Final fine-tuned transformers were not retrained in cross-validation; transformer CV rows are frozen probes.",
+    "Fairness uses inferred demographic proxies with missingness and limited class coverage.",
+    "Perturbations and keyword masking were not clinically verified to preserve meaning.",
+    "No separate grading rubric was supplied."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "checkpoint": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+  "best_lr": 0.0001,
+  "best_epoch": 6,
+  "best_val_macro_f1": 0.9358253969716421,
+  "grid": [
+    {
+      "lr": 3e-05,
+      "best_val_macro_f1": 0.900872997420312,
+      "best_epoch": 3,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2876314860123856,
+          "val_loss": 1.5417428016662598,
+          "val_macro_f1": 0.7107504845841559,
+          "val_acc": 0.7959183673469388,
+          "grad_norm_mean": 4.900935902962318,
+          "epoch_time_s": 364.5769910812378
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.7312828971789433,
+          "val_loss": 0.3391888439655304,
+          "val_macro_f1": 0.8764866093975603,
+          "val_acc": 0.9115646258503401,
+          "grad_norm_mean": 4.847766282008244,
+          "epoch_time_s": 333.19473814964294
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.2973435583022925,
+          "val_loss": 0.2397840917110443,
+          "val_macro_f1": 0.900872997420312,
+          "val_acc": 0.9319727891156463,
+          "grad_norm_mean": 4.396673624332134,
+          "epoch_time_s": 357.9506947994232
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2050666927718199,
+          "val_loss": 0.22142134606838226,
+          "val_macro_f1": 0.8933989899463046,
+          "val_acc": 0.9251700680272109,
+          "grad_norm_mean": 3.755565251295383,
+          "epoch_time_s": 348.1023323535919
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.16205340884625913,
+          "val_loss": 0.19820375740528107,
+          "val_macro_f1": 0.900872997420312,
+          "val_acc": 0.9319727891156463,
+          "grad_norm_mean": 3.3266566964296196,
+          "epoch_time_s": 334.08456921577454
+        }
+      ]
+    },
+    {
+      "lr": 0.0001,
+      "best_val_macro_f1": 0.9358253969716421,
+      "best_epoch": 6,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.6237796132381146,
+          "val_loss": 0.36114588379859924,
+          "val_macro_f1": 0.8258053720740288,
+          "val_acc": 0.8775510204081632,
+          "grad_norm_mean": 5.301316319979154,
+          "epoch_time_s": 423.3458812236786
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.2721656311303377,
+          "val_loss": 0.2934262156486511,
+          "val_macro_f1": 0.8728602505824035,
+          "val_acc": 0.9047619047619048,
+          "grad_norm_mean": 4.531285547751647,
+          "epoch_time_s": 419.14713644981384
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.13021272958184665,
+          "val_loss": 0.18451569974422455,
+          "val_macro_f1": 0.9128128165759062,
+          "val_acc": 0.9455782312925171,
+          "grad_norm_mean": 3.3004560644810015,
+          "epoch_time_s": 450.1387724876404
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.05455360022874979,
+          "val_loss": 0.17949263751506805,
+          "val_macro_f1": 0.9230129130129131,
+          "val_acc": 0.9523809523809523,
+          "grad_norm_mean": 1.767093247633714,
+          "epoch_time_s": 387.10744619369507
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.02443888341076672,
+          "val_loss": 0.15431392192840576,
+          "val_macro_f1": 0.9289207306854366,
+          "val_acc": 0.9523809523809523,
+          "grad_norm_mean": 0.7455904699288882,
+          "epoch_time_s": 538.1388423442841
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.015579516809576978,
+          "val_loss": 0.16013307869434357,
+          "val_macro_f1": 0.9358253969716421,
+          "val_acc": 0.9591836734693877,
+          "grad_norm_mean": 0.3532928461065659,
+          "epoch_time_s": 531.3395855426788
+        }
+      ]
+    }
+  ],
+  "cache_time_s": 2108.1740350723267,
+  "train_time_s": 4498.770153284073,
+  "total_params": 109490699,
+  "trainable_params": 14184203,
+  "test_tokens_median": 517.5,
+  "test_frac_truncated": 0.8435374149659864
+}

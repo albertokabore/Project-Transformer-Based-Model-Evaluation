@@ -1,0 +1,6 @@
+{
+  "dmis-lab/biobert-base-cased-v1.2 lowercase=True": 1.6546569855806108,
+  "dmis-lab/biobert-base-cased-v1.2 lowercase=False": 1.3480646287401516,
+  "emilyalsentzer/Bio_ClinicalBERT lowercase=True": 1.6548239224745582,
+  "emilyalsentzer/Bio_ClinicalBERT lowercase=False": 1.370990698536237
+}

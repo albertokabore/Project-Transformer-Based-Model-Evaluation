@@ -1,0 +1,222 @@
+[
+  {
+    "test_index": 0,
+    "true": "Cardiovascular / Pulmonary",
+    "pred_transformer": "Cardiovascular / Pulmonary",
+    "p": 0.9989896416664124,
+    "pred_logreg": "Cardiovascular / Pulmonary",
+    "p_logreg": 0.9889195435053277,
+    "lime_tf": [
+      [
+        "DETAIL",
+        0.007701801755452428
+      ],
+      [
+        "cardiac",
+        0.007674817826720135
+      ],
+      [
+        "PROCEDURE",
+        0.007128939123322494
+      ],
+      [
+        "Angio",
+        0.006248867090782223
+      ],
+      [
+        "then",
+        0.005314344521055143
+      ],
+      [
+        "Under",
+        -0.0027494935284432874
+      ],
+      [
+        "room",
+        0.0022054307188970244
+      ],
+      [
+        "anesthesia",
+        -0.0014075517523620155
+      ],
+      [
+        "There",
+        -0.0013372354896603366
+      ],
+      [
+        "the",
+        -0.0012352011238033688
+      ],
+      [
+        "usual",
+        -0.0008780452279311267
+      ],
+      [
+        "valve",
+        0.0007404875187393963
+      ]
+    ],
+    "lime_lr": [
+      [
+        "coronary",
+        0.06073817253094271
+      ],
+      [
+        "cardiac",
+        0.04574015846943401
+      ],
+      [
+        "artery",
+        0.0404776792853799
+      ],
+      [
+        "disease",
+        0.02865053119578278
+      ],
+      [
+        "left",
+        0.018365129057208104
+      ],
+      [
+        "aortic",
+        0.014887596832985924
+      ],
+      [
+        "femoral",
+        0.014044823302871266
+      ],
+      [
+        "valve",
+        0.01125081076871653
+      ],
+      [
+        "sheath",
+        0.01059185009798689
+      ],
+      [
+        "circumflex",
+        0.010403888246469532
+      ],
+      [
+        "catheters",
+        0.009212749099838465
+      ],
+      [
+        "electrocardiogram",
+        0.004861962017478865
+      ]
+    ],
+    "lime_top12_overlap_tf_vs_lr": 2,
+    "text_excerpt": "PROCEDURE: , Urgent cardiac catheterization with coronary angiogram. PROCEDURE IN DETAIL: , The patient was brought urgently to the cardiac cath lab from the emergency room with the patient being intubated with an abnormal electrocardiogram and a cardiac arrest. The right groin was prepped and draped in usual manner. Under 2% lidocaine anesthesia, the right femoral artery was entered. A 6-French s"
+  },
+  {
+    "test_index": 73,
+    "true": "Hematology - Oncology",
+    "pred_transformer": "Urology",
+    "p": 0.9956117272377014,
+    "pred_logreg": "Gastroenterology",
+    "p_logreg": 0.3194153682270251,
+    "lime_tf": [
+      [
+        "bladder",
+        0.6459578048015304
+      ],
+      [
+        "hydroureter",
+        0.14641121237377674
+      ],
+      [
+        "bilateral",
+        0.11764635649985104
+      ],
+      [
+        "17",
+        -0.1014700920877528
+      ],
+      [
+        "18",
+        0.06690105268199256
+      ],
+      [
+        "antibiotics",
+        0.06679334815124466
+      ],
+      [
+        "wall",
+        0.06138506541398671
+      ],
+      [
+        "PRESENT",
+        -0.05252564321282488
+      ],
+      [
+        "confirmed",
+        -0.04742073356540985
+      ],
+      [
+        "a",
+        -0.045385209605898036
+      ],
+      [
+        "14",
+        0.04154142408174276
+      ],
+      [
+        "demented",
+        -0.010958812576807225
+      ]
+    ],
+    "lime_lr": [
+      [
+        "bladder",
+        0.041318028649772603
+      ],
+      [
+        "acute",
+        -0.01835371326070083
+      ],
+      [
+        "artery",
+        -0.016778830372014004
+      ],
+      [
+        "disease",
+        -0.014810162492969126
+      ],
+      [
+        "He",
+        0.013957968896683439
+      ],
+      [
+        "ADMISSION",
+        -0.013840869338703736
+      ],
+      [
+        "pressure",
+        -0.012230804729949654
+      ],
+      [
+        "board",
+        0.009684394957749042
+      ],
+      [
+        "abdominal",
+        -0.009598106119824106
+      ],
+      [
+        "antibiotics",
+        0.008169621412206805
+      ],
+      [
+        "room",
+        0.007366170368116557
+      ],
+      [
+        "suggesting",
+        0.0015359308660934463
+      ]
+    ],
+    "lime_top12_overlap_tf_vs_lr": 2,
+    "text_excerpt": "REASON FOR ADMISSION: , Sepsis. HISTORY OF PRESENT ILLNESS: ,The patient is a pleasant but demented 80-year-old male, who lives in board and care, who presented with acute onset of abdominal pain. In the emergency room, the patient was found to have a CT scan with dilated bladder with thick wall suggesting an outlet obstruction as well as bilateral hydronephrosis and hydroureter. The patient is un"
+  }
+]

@@ -1,0 +1,8 @@
+Model,Architecture,Pre-training,Features / vocabulary,Size,Trainable in this study,Input
+TF-IDF + Logistic Regression,Linear (multinomial),none (trained from scratch),"TF-IDF unigrams, learned on train","99,242 weights",all,full note
+TF-IDF + Linear SVM,Linear max-margin + Platt calibration,none,"TF-IDF unigrams, learned on train","496,210 weights",all,full note
+TF-IDF + Random Forest,Bagged decision trees,none,"TF-IDF uni+bigrams, top 20k","300 trees, 108,286 nodes",all,full note
+BioBERT v1.2,"BERT-base encoder (cased), 12 layers, 768-d, 12 heads",BERT init. + PubMed abstracts,"WordPiece, 28,996 (general BERT vocab)",108.3 M parameters,top 2 layers + head (14.2 M),first 256 word-pieces
+Bio_ClinicalBERT,"BERT-base encoder (cased), 12 layers, 768-d, 12 heads",BioBERT init. + MIMIC-III clinical notes,"WordPiece, 28,996 (general BERT vocab)",108.3 M parameters,top 2 layers + head (14.2 M),first 256 word-pieces
+PubMedBERT (BiomedBERT),"BERT-base encoder (uncased), 12 layers, 768-d, 12 heads",from scratch: PubMed abstracts + PMC full text,"WordPiece, 30,522 (in-domain vocab)",109.5 M parameters,top 2 layers + head (14.2 M),first 256 word-pieces
+RoBERTa-base,"RoBERTa-base encoder, 12 layers, 768-d, 12 heads","general domain (books, Wikipedia, news, web)","byte-level BPE, 50,265",124.7 M parameters,top 2 layers + head (14.2 M),first 256 word-pieces

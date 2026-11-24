@@ -1,0 +1,14 @@
+,count
+Orthopedic -> Neurology,4
+Hematology - Oncology -> Gastroenterology,2
+Neurology -> Cardiovascular / Pulmonary,2
+Gastroenterology -> Obstetrics / Gynecology,1
+Orthopedic -> Cardiovascular / Pulmonary,1
+Nephrology -> Hematology - Oncology,1
+Hematology - Oncology -> Cardiovascular / Pulmonary,1
+Gastroenterology -> Pain Management,1
+Nephrology -> Gastroenterology,1
+Nephrology -> Cardiovascular / Pulmonary,1
+Gastroenterology -> Hematology - Oncology,1
+Gastroenterology -> Orthopedic,1
+Cardiovascular / Pulmonary -> Gastroenterology,1

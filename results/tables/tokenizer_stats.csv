@@ -1,0 +1,5 @@
+model,checkpoint,vocab_size,lowercase input,layers,hidden,heads,fertility (pieces/word),% words split,clinical terms kept whole (/30),median tokens/note,% notes > 256 tokens
+clinicalbert,emilyalsentzer/Bio_ClinicalBERT,28996,False,12,768,12,1.45032,20.508000000000003,1,672.0,88.97560975609757
+pubmedbert,microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext,30522,True,12,768,12,1.11712,8.114,23,534.0,82.24390243902438
+biobert,dmis-lab/biobert-base-cased-v1.2,28996,False,12,768,12,1.45032,20.508000000000003,1,672.0,88.97560975609757
+roberta,FacebookAI/roberta-base,50265,False,12,768,12,1.2888,17.288,4,601.0,86.14634146341463

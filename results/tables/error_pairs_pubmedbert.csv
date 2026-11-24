@@ -1,0 +1,15 @@
+,count
+Cardiovascular / Pulmonary -> Neurology,2
+Orthopedic -> ENT - Otolaryngology,2
+Neurology -> Cardiovascular / Pulmonary,2
+Hematology - Oncology -> Urology,1
+Neurology -> Hematology - Oncology,1
+Obstetrics / Gynecology -> Hematology - Oncology,1
+Nephrology -> Urology,1
+Orthopedic -> Hematology - Oncology,1
+Cardiovascular / Pulmonary -> Nephrology,1
+ENT - Otolaryngology -> Neurology,1
+Gastroenterology -> Obstetrics / Gynecology,1
+Orthopedic -> Urology,1
+Orthopedic -> Neurology,1
+Cardiovascular / Pulmonary -> Hematology - Oncology,1

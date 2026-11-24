@@ -1,0 +1,74 @@
+{
+  "raw_rows": 4999,
+  "raw_categories": 40,
+  "rows_with_text": 4966,
+  "unique_transcriptions": 2357,
+  "docs_by_n_specialties": {
+    "0": 295,
+    "1": 1745,
+    "2": 306,
+    "3": 11
+  },
+  "kept_classes": {
+    "Cardiovascular / Pulmonary": 339,
+    "ENT - Otolaryngology": 79,
+    "Gastroenterology": 190,
+    "Hematology - Oncology": 61,
+    "Nephrology": 51,
+    "Neurology": 124,
+    "Obstetrics / Gynecology": 141,
+    "Ophthalmology": 75,
+    "Orthopedic": 224,
+    "Pain Management": 50,
+    "Urology": 132
+  },
+  "post_norm_duplicates": 0,
+  "ood_docs": 279,
+  "ood_classes": {
+    "Psychiatry / Psychology": 42,
+    "Pediatrics - Neonatal": 35,
+    "Dermatology": 26,
+    "Dentistry": 26,
+    "Podiatry": 24,
+    "Neurosurgery": 20,
+    "Cosmetic / Plastic Surgery": 16,
+    "Endocrinology": 15,
+    "Bariatrics": 14,
+    "Diets and Nutritions": 10,
+    "Rheumatology": 8,
+    "Autopsy": 8,
+    "Sleep Medicine": 8,
+    "Speech - Language": 7,
+    "Chiropractic": 7,
+    "Hospice - Palliative Care": 5,
+    "Allergy / Immunology": 4,
+    "Physical Medicine - Rehab": 3,
+    "Lab Medicine - Pathology": 1
+  },
+  "phi_replacements": {
+    "[DATE]": 880,
+    "[NAME]": 334,
+    "[PHONE]": 1
+  },
+  "normalization": {
+    "abbreviations_expanded": 692
+  },
+  "split_sizes": {
+    "train": 1025,
+    "val": 147,
+    "test": 294
+  },
+  "class_counts_train": {
+    "Cardiovascular / Pulmonary": 237,
+    "Orthopedic": 156,
+    "Gastroenterology": 133,
+    "Obstetrics / Gynecology": 99,
+    "Urology": 92,
+    "Neurology": 87,
+    "ENT - Otolaryngology": 55,
+    "Ophthalmology": 52,
+    "Hematology - Oncology": 43,
+    "Nephrology": 36,
+    "Pain Management": 35
+  }
+}
