@@ -1,7 +1,7 @@
 """Build one Word report from src/report_template.md and measured CSV tables.
 
-The report contains its required abstract; notebooks/build_notebook.py omits that
-section from the notebook. Both use the same results and final-insight bullets.
+The report contains its required abstract and a separate narrative template.
+The notebook keeps its step-based format and 300-word final-insight list.
 """
 from __future__ import annotations
 
@@ -67,138 +67,34 @@ def render_markdown():
 
 
 def render_technical_report():
-    """Arrange the shared evidence into the seven requested report sections.
-
-    The notebook keeps its step-by-step observations and 300-word insight list.
-    The Word report uses prose and a conventional methodology/results structure.
-    """
-    shared = render_markdown()
-
-    def major(title):
-        pattern = r"(?ms)^## " + re.escape(title) + r"\n(.*?)(?=^## |\Z)"
-        match = re.search(pattern, shared)
-        if not match:
-            raise ValueError(f"Missing shared section: {title}")
-        return match.group(1).strip()
-
-    def subsection(text, title):
-        pattern = r"(?ms)^### " + re.escape(title) + r"\n(.*?)(?=^### |\Z)"
-        match = re.search(pattern, text)
-        if not match:
-            raise ValueError(f"Missing evidence subsection: {title}")
-        return match.group(1).strip()
-
-    def take_paragraph(text, starts_with):
-        paragraphs = text.split("\n\n")
-        selected = [p for p in paragraphs if p.startswith(starts_with)]
-        if len(selected) != 1:
-            raise ValueError(f"Expected one paragraph starting: {starts_with}")
-        return selected[0], "\n\n".join(p for p in paragraphs if p != selected[0]).strip()
-
-    steps = {}
-    for number in range(1, 9):
-        match = re.search(r"(?ms)^## Step " + str(number) + r"\.[^\n]*\n(.*?)(?=^## |\Z)", shared)
-        if not match:
-            raise ValueError(f"Missing step {number}")
-        steps[number] = match.group(1).split("**Observations**", 1)[0].strip()
-
-    title = shared.split("## Abstract", 1)[0].strip()
-    intro = major("Introduction")
-    intro, verification = intro.split("\n\n**What was checked.** ", 1)
-    performance = subsection(steps[5], "Predictive performance")
-    metric_method, performance = take_paragraph(performance, "The test set contains")
-    robustness = subsection(steps[5], "Robustness and unseen-specialty detection")
-    perturb_method, robustness = take_paragraph(robustness, "The robustness tests introduce")
-    ood_method, robustness = take_paragraph(robustness, "Unseen-specialty detection uses")
-    fairness = subsection(steps[5], "Exploratory fairness assessment")
-    fairness_method, fairness = take_paragraph(fairness, "Demographic parity difference compares")
-    efficiency = subsection(steps[6], "Computational efficiency")
-    efficiency_method, efficiency = take_paragraph(efficiency, "Each model was measured")
-    interpretation = subsection(steps[6], "Interpretability")
-    shap_method, interpretation = take_paragraph(interpretation, "Linear SHAP explains")
-    local_method, interpretation = take_paragraph(interpretation, "Two selected notes illustrate")
-    statistics = steps[7]
-    _, statistics = take_paragraph(statistics, "McNemar's test compares")
-    cv_method, statistics = take_paragraph(statistics, "Resampling uses")
-    error_analysis = subsection(steps[8], "Error analysis")
-    ethics = subsection(steps[8], "Ethical reliability and clinical relevance")
-
-    quality_path = ROOT / "results/data_quality_audit.json"
-    quality = json.loads(quality_path.read_text(encoding="utf-8"))
+    """Render the concise report; preserve the notebook's separate step-based format."""
+    source = (ROOT / "src/technical_report_template.md").read_text(encoding="utf-8")
+    quality = json.loads((ROOT / "results/data_quality_audit.json").read_text(encoding="utf-8"))
     if quality["failed"]:
         raise ValueError("Data-quality audit contains failed checks")
-    cleanliness = (
-        "The repeated cleaning audit rebuilt every processed row from the raw file. Across the training, "
-        "validation, test, and unseen-specialty sets, it found no missing cells, blank notes, untrimmed text, "
-        "repeated whitespace, control characters, or word-count mismatches. Exact text overlap between "
-        "each split pair was zero. Ignoring case and punctuation also produced zero duplicate groups. "
-        "Raw input validation now rejects missing columns and removes missing or whitespace-only labels "
-        "and notes before grouping; these safeguards did not change the current benchmark.\n\n"
-        f"A repeated normalization pass would replace a separator in {quality['repeat_normalization_punctuation_only_documents']} "
-        "documents without changing letters or digits. No further matches to the implemented identifier "
-        "patterns were found. The original cleaned inputs were retained so that the saved predictions, "
-        "row order, and input hashes remain aligned. Neither this check nor zero regex matches establishes "
-        "complete de-identification. Counts and checks are recorded in `results/data_quality_audit.json`."
+    cleaning = (
+        "Quality checks found no missing fields, empty notes, whitespace defects, control characters, "
+        "or word-count mismatches in the retained data. No duplicate texts remained within or between "
+        "splits, including when case and punctuation were ignored. A second normalization pass would "
+        f"change one separator in {quality['repeat_normalization_punctuation_only_documents']} notes. "
+        "The one-pass inputs were retained to preserve alignment with the saved predictions."
     )
-    mcnemar_method = (
-        "McNemar's test compares paired correctness on the common test notes. Fewer than 25 discordant "
-        "pairs trigger an exact binomial test; otherwise, continuity-corrected chi-square is used. Holm "
-        "correction covers all 21 architecture pairs. This tests accuracy differences. Paired bootstrap "
-        "intervals compare macro-F1 using 1,000 shared resamples; those intervals are pointwise and "
-        "exclude variability from retraining or model selection. The comparison reference is chosen "
-        "by validation macro-F1."
-    )
-    mcnemar_results = (
-        "After Holm correction, only three accuracy comparisons fall below p = .05: Logistic Regression, "
-        "SVM, and PubMedBERT each outperform Random Forest. The remaining tests leave differences "
-        "unresolved; they do not establish equivalence."
-    )
-    statistics = statistics.replace("\n\n| Accuracy comparison", "\n\n" + mcnemar_results + "\n\n| Accuracy comparison", 1)
-    insights = [line[2:] for line in major("Final insights").splitlines() if line.startswith("- ")]
-    discussion = "\n\n".join(insights)
-    limitations = (
-        "The main training limitation is the use of one seed, two learning rates, a 256-token input limit, "
-        "and partial transformer fine-tuning. Frozen-embedding probes were resampled, but the final "
-        "fine-tuned transformers were not retrained within cross-validation. Classical resampling uses "
-        "previously chosen hyperparameters, and the SVM resampling evaluates its uncalibrated classifier. "
-        "These differences limit claims about architecture stability and the full tuning procedure. "
-        "The demographic audit covers only the classes with sufficient proxy-group support; its missing "
-        "values and unverified group assignments prevent a conclusion that any model is fair."
-    )
-    recommendations = [re.sub(r"^\d+\.\s*", "", line) for line in major("Recommendations").splitlines() if re.match(r"^\d+\. ", line)]
-    pipeline = re.search(r"(?m)^!\[Figure 1\..*$", shared).group(0)
-    references = re.sub(r"(?m)(https?://\S+)$", lambda match: f"[{match.group(1)}]({match.group(1)})", major("References"))
-    report = "\n\n".join([
-        title, "## Abstract", major("Abstract"), "## Introduction", intro,
-        "## Methodology", pipeline, "### Data collection and cleaning", steps[1], cleanliness,
-        "### Text preprocessing and data partitions", steps[2], "### Model architectures", steps[3],
-        "### Training and experiment tracking", steps[4],
-        "### Performance metrics and statistical design", metric_method, mcnemar_method, cv_method,
-        "### Robustness and demographic comparisons", perturb_method, ood_method, fairness_method,
-        "### Efficiency measurements and explanation methods", efficiency_method, shap_method, local_method,
-        "### Verification and reproducibility", verification,
-        "## Results", "### Classification performance", performance,
-        "### Robustness and unseen specialties", robustness, "### Subgroup and counterfactual results", fairness,
-        "### Computational efficiency", efficiency, "### Explanations and error analysis", interpretation, error_analysis,
-        "### Statistical comparisons and optimization", statistics,
-        "## Discussion", discussion, "### Limitations and bias assessment", limitations,
-        "### Clinical implications and ethical considerations", ethics,
-        "## Conclusion", major("Conclusions"), "### Deployment recommendations",
-        "\n\n".join(recommendations[i] for i in (1, 2, 3, 4)),
-        "### Future research", "\n\n".join(recommendations[i] for i in (0, 5, 6, 7)),
-        "## References", references
-    ]) + "\n"
-    # Moving the error analysis ahead of statistics also moves its per-class table.
-    # Keep captions and in-text table references consecutive in the final report.
-    table_order = re.findall(r"(?m)^\*Table (\d+)\.", report)
-    table_numbers = {old: str(index) for index, old in enumerate(table_order, 1)}
-    report = re.sub(r"\bTable (\d+)\b", lambda match: "Table " + table_numbers.get(match.group(1), match.group(1)), report)
+    references = render_markdown().split("## References", 1)[1].strip()
+    references = re.sub(r"(?m)(https?://\S+)$", lambda match: f"[{match.group(1)}]({match.group(1)})", references)
+    text = source.replace("{{cleaning_audit}}", cleaning).replace("{{references}}", references)
+    text = re.sub(r"\{\{table:([^}]+)\}\}", lambda match: table(match.group(1)), text)
     expected = ["Abstract", "Introduction", "Methodology", "Results", "Discussion", "Conclusion", "References"]
-    if re.findall(r"(?m)^## (.+)$", report) != expected:
+    if re.findall(r"(?m)^## (.+)$", text) != expected:
         raise ValueError("Technical report section order does not match the assignment")
-    if "**Observations**" in report or re.search(r"(?m)^## Step ", report):
+    conclusion = text.split("## Conclusion\n", 1)[1].split("## References\n", 1)[0]
+    if re.search(r"(?m)^#", conclusion):
+        raise ValueError("Conclusion must be the last report section before references")
+    if "**Observations**" in text or re.search(r"(?m)^## Step ", text):
         raise ValueError("Notebook step formatting leaked into the technical report")
-    return report
+    if re.search(r"%%|\{\{", text):
+        raise ValueError("Report contains unresolved placeholders")
+    return text
+
 
 
 def make_word(body_html, destination):
@@ -220,21 +116,25 @@ def make_word(body_html, destination):
     width = section.page_width - section.left_margin - section.right_margin
     normal = document.styles["Normal"]
     normal.font.name, normal.font.size = "Arial", Pt(10.5)
+    normal.font.color.rgb = RGBColor(0, 0, 0)
     normal.paragraph_format.line_spacing = 1.15
     normal.paragraph_format.space_after = Pt(6)
-    if "Hyperlink" not in document.styles:
-        hyperlink = document.styles.add_style("Hyperlink", WD_STYLE_TYPE.CHARACTER)
-        hyperlink.font.color.rgb = RGBColor.from_string("0563C1")
+    for name in ("Hyperlink", "FollowedHyperlink"):
+        hyperlink = document.styles[name] if name in document.styles else document.styles.add_style(name, WD_STYLE_TYPE.CHARACTER)
+        hyperlink.font.color.rgb = RGBColor(0, 0, 0)
         hyperlink.font.underline = True
     for style_name, size in (("Title", 19), ("Heading 1", 14), ("Heading 2", 12), ("Heading 3", 11)):
         style = document.styles[style_name]
         style.font.name, style.font.size = "Arial", Pt(size)
-        style.font.color.rgb = RGBColor.from_string("182536")
+        style.font.color.rgb = RGBColor(0, 0, 0)
         style.paragraph_format.keep_with_next = True
         style.paragraph_format.space_before = Pt(14)
         style.paragraph_format.space_after = Pt(6)
     document.styles["Caption"].font.size = Pt(9)
-    document.styles["Caption"].font.color.rgb = RGBColor.from_string("42546A")
+    document.styles["Caption"].font.color.rgb = RGBColor(0, 0, 0)
+    for style in document.styles:
+        if hasattr(style, "font"):
+            style.font.color.rgb = RGBColor(0, 0, 0)
     document.core_properties.title = "Transformer-Based Model Evaluation"
     document.core_properties.author = "Albert Kabore"
     document.core_properties.subject = "Medical specialty classification: comparative model evaluation"
@@ -255,6 +155,9 @@ def make_word(body_html, destination):
         style = OxmlElement("w:rStyle")
         style.set(qn("w:val"), "Hyperlink")
         props.append(style)
+        color = OxmlElement("w:color")
+        color.set(qn("w:val"), "000000")
+        props.append(color)
         for enabled, tag in ((bold, "w:b"), (italic, "w:i")):
             if enabled:
                 props.append(OxmlElement(tag))
@@ -353,9 +256,15 @@ def make_word(body_html, destination):
                         run.font.size = Pt(7.5 if n >= 7 else 8.5)
                     if i == 0:
                         shade = OxmlElement("w:shd")
-                        shade.set(qn("w:fill"), "EAF1F7")
+                        shade.set(qn("w:fill"), "F2F2F2")
                         cell._tc.get_or_add_tcPr().append(shade)
             document.add_paragraph().paragraph_format.space_after = Pt(2)
+    # Remove theme overrides that could recolor headings, links, or visited links.
+    for element in (document._element, document.styles.element, section.footer._element):
+        for color in element.iter(qn("w:color")):
+            color.set(qn("w:val"), "000000")
+            for attribute in ("themeColor", "themeTint", "themeShade"):
+                color.attrib.pop(qn("w:" + attribute), None)
     document.save(destination)
 
 

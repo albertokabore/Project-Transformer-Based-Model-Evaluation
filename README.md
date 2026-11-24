@@ -33,11 +33,11 @@ python notebooks/build_notebook.py
 python -m jupyter nbconvert --to notebook --execute --inplace notebooks/Transformer_Model_Evaluation.ipynb --ExecutePreprocessor.timeout=600
 ```
 
-Edit the authoring source at `src/report_template.md`, then run `python report/build_report.py`
-to update the Word report after running the data-quality audit. The builder reorganizes
-the shared evidence into a technical report and produces one report file. Close that
-file in Word before rebuilding. The notebook keeps the eight-step format, omits the
-abstract, and contains six final-insight bullets totaling 300 words.
+Edit `src/technical_report_template.md` for the Word report and `src/report_template.md`
+for the notebook narrative. Run `python report/build_report.py` after the data-quality
+audit to update the report. It uses black text and ends with Conclusion, then References.
+Close the file in Word before rebuilding. The notebook keeps its eight-step format,
+omits the abstract, and contains six final-insight bullets totaling 300 words.
 
 ## Reproduce the original experiments
 

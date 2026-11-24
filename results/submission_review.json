@@ -15,8 +15,8 @@
   "notebook_final_insight_word_count": 300,
   "observation_blocks": 8,
   "observation_words_per_block": 50,
-  "report_tables": 15,
-  "report_embedded_figures": 11,
+  "report_tables": 13,
+  "report_embedded_figures": 8,
   "executed_notebook_code_cells": 9,
   "preserved_code_outputs_and_result_tables": true,
   "saved_evidence_audit_checks_passed": 359,
@@ -34,5 +34,7 @@
   "data_quality_checks_passed": 77,
   "cleaning_rebuilt_from_raw": true,
   "cleaning_rebuild_preserved_input_hashes": true,
-  "report_sha256": "b01910a8ce95d8b602a472de7908367b358c99bd2df3af1946537efcdb4086f6"
+  "report_sha256": "01ed719219d42c49cd727ec7f124313a8af9571a059ef51d9f29d8f9bb51e856",
+  "report_font_color": "000000",
+  "conclusion_immediately_precedes_references": true
 }
