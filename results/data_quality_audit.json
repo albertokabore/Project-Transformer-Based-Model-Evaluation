@@ -1,0 +1,387 @@
+{
+  "date": "2026-11-24",
+  "raw_missing_or_blank": {
+    "transcription": {
+      "missing": 33,
+      "blank_nonmissing": 0
+    },
+    "medical_specialty": {
+      "missing": 0,
+      "blank_nonmissing": 0
+    }
+  },
+  "per_split": {
+    "train": {
+      "rows": 1025,
+      "missing_cells": 0,
+      "blank_texts": 0,
+      "duplicate_texts": 0,
+      "untrimmed_texts": 0,
+      "repeated_whitespace": 0,
+      "control_characters": 0,
+      "word_count_mismatches": 0
+    },
+    "val": {
+      "rows": 147,
+      "missing_cells": 0,
+      "blank_texts": 0,
+      "duplicate_texts": 0,
+      "untrimmed_texts": 0,
+      "repeated_whitespace": 0,
+      "control_characters": 0,
+      "word_count_mismatches": 0
+    },
+    "test": {
+      "rows": 294,
+      "missing_cells": 0,
+      "blank_texts": 0,
+      "duplicate_texts": 0,
+      "untrimmed_texts": 0,
+      "repeated_whitespace": 0,
+      "control_characters": 0,
+      "word_count_mismatches": 0
+    },
+    "ood": {
+      "rows": 279,
+      "missing_cells": 0,
+      "blank_texts": 0,
+      "duplicate_texts": 0,
+      "untrimmed_texts": 0,
+      "repeated_whitespace": 0,
+      "control_characters": 0,
+      "word_count_mismatches": 0
+    }
+  },
+  "exact_overlap_by_split_pair": {
+    "train/val": 0,
+    "train/test": 0,
+    "train/ood": 0,
+    "val/test": 0,
+    "val/ood": 0,
+    "test/ood": 0
+  },
+  "canonical_duplicate_groups": 0,
+  "additional_implemented_identifier_matches": {},
+  "repeat_normalization_punctuation_only_documents": 12,
+  "input_policy": "Retain original cleaned benchmark inputs and row order so saved predictions remain traceable. A repeat pass changes a separator in 12 notes without changing letters or digits; no second-pass identifier matches were found.",
+  "privacy_limit": "Zero regex matches does not establish complete de-identification; clinical and privacy review remain necessary.",
+  "checks": [
+    {
+      "check": "train: required columns",
+      "passed": true
+    },
+    {
+      "check": "train: rebuilt from raw data in identical order",
+      "passed": true
+    },
+    {
+      "check": "train: missing_cells is zero",
+      "passed": true
+    },
+    {
+      "check": "train: blank_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "train: duplicate_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "train: untrimmed_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "train: repeated_whitespace is zero",
+      "passed": true
+    },
+    {
+      "check": "train: control_characters is zero",
+      "passed": true
+    },
+    {
+      "check": "train: word_count_mismatches is zero",
+      "passed": true
+    },
+    {
+      "check": "train: nonempty labels",
+      "passed": true
+    },
+    {
+      "check": "train: trimmed labels",
+      "passed": true
+    },
+    {
+      "check": "train: permitted sex-proxy values",
+      "passed": true
+    },
+    {
+      "check": "train: permitted age groups",
+      "passed": true
+    },
+    {
+      "check": "train: valid label mapping",
+      "passed": true
+    },
+    {
+      "check": "train/237: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/287: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/320: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/332: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/497: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/581: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/857: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "val: required columns",
+      "passed": true
+    },
+    {
+      "check": "val: rebuilt from raw data in identical order",
+      "passed": true
+    },
+    {
+      "check": "val: missing_cells is zero",
+      "passed": true
+    },
+    {
+      "check": "val: blank_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "val: duplicate_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "val: untrimmed_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "val: repeated_whitespace is zero",
+      "passed": true
+    },
+    {
+      "check": "val: control_characters is zero",
+      "passed": true
+    },
+    {
+      "check": "val: word_count_mismatches is zero",
+      "passed": true
+    },
+    {
+      "check": "val: nonempty labels",
+      "passed": true
+    },
+    {
+      "check": "val: trimmed labels",
+      "passed": true
+    },
+    {
+      "check": "val: permitted sex-proxy values",
+      "passed": true
+    },
+    {
+      "check": "val: permitted age groups",
+      "passed": true
+    },
+    {
+      "check": "val: valid label mapping",
+      "passed": true
+    },
+    {
+      "check": "test: required columns",
+      "passed": true
+    },
+    {
+      "check": "test: rebuilt from raw data in identical order",
+      "passed": true
+    },
+    {
+      "check": "test: missing_cells is zero",
+      "passed": true
+    },
+    {
+      "check": "test: blank_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "test: duplicate_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "test: untrimmed_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "test: repeated_whitespace is zero",
+      "passed": true
+    },
+    {
+      "check": "test: control_characters is zero",
+      "passed": true
+    },
+    {
+      "check": "test: word_count_mismatches is zero",
+      "passed": true
+    },
+    {
+      "check": "test: nonempty labels",
+      "passed": true
+    },
+    {
+      "check": "test: trimmed labels",
+      "passed": true
+    },
+    {
+      "check": "test: permitted sex-proxy values",
+      "passed": true
+    },
+    {
+      "check": "test: permitted age groups",
+      "passed": true
+    },
+    {
+      "check": "test: valid label mapping",
+      "passed": true
+    },
+    {
+      "check": "test/4: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "test/249: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "test/250: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "test/280: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "ood: required columns",
+      "passed": true
+    },
+    {
+      "check": "ood: rebuilt from raw data in identical order",
+      "passed": true
+    },
+    {
+      "check": "ood: missing_cells is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: blank_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: duplicate_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: untrimmed_texts is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: repeated_whitespace is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: control_characters is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: word_count_mismatches is zero",
+      "passed": true
+    },
+    {
+      "check": "ood: nonempty labels",
+      "passed": true
+    },
+    {
+      "check": "ood: trimmed labels",
+      "passed": true
+    },
+    {
+      "check": "ood: permitted sex-proxy values",
+      "passed": true
+    },
+    {
+      "check": "ood: permitted age groups",
+      "passed": true
+    },
+    {
+      "check": "ood: valid label mapping",
+      "passed": true
+    },
+    {
+      "check": "ood/79: repeat cleaning preserves letters and digits",
+      "passed": true
+    },
+    {
+      "check": "train/val: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "train/test: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "train/ood: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "val/test: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "val/ood: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "test/ood: zero exact text overlap",
+      "passed": true
+    },
+    {
+      "check": "zero duplicate groups after ignoring case and punctuation",
+      "passed": true
+    },
+    {
+      "check": "no further matches to implemented identifier patterns",
+      "passed": true
+    },
+    {
+      "check": "raw-data statistics match saved statistics",
+      "passed": true
+    }
+  ],
+  "passed": 77,
+  "failed": 0,
+  "input_sha256": {
+    "data/raw/mtsamples.csv": "a92cb78569f460606661ee7da50c92305b60d0fac2be4b06c8d2de0f234612d4",
+    "data/processed/train.csv": "24009adfa7c4d75b23f2a18f058b65e43ca5aac2169e4de24ff9c13f81208484",
+    "data/processed/val.csv": "907354b594c2cfc75129d9f82ea9db1aa1cf34d31fd48d127d553bea6ee5b73a",
+    "data/processed/test.csv": "9de6521f3ca98219bdc38f1e2e68e0b53ddea463b1ad523dd3348fec175b71ff",
+    "data/processed/ood.csv": "76da21240c1e0d73c171267d095a606623ff279471df8e22419d2bc424f49c67"
+  }
+}

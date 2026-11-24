@@ -5,9 +5,9 @@
 Seven-model evaluation of MTSamples specialty classification: TF-IDF Logistic Regression,
 linear SVM, Random Forest, BioBERT, Bio_ClinicalBERT, PubMedBERT/BiomedBERT, and RoBERTa.
 
-The report follows the eight assignment steps, with observations after each step.
-It includes the results, discussion, final insights, recommendations, conclusions, and
-APA references. Tables come from the saved CSV files.
+The Word report follows the required sections: Abstract, Introduction, Methodology,
+Results, Discussion, Conclusion, and References. It presents findings in prose, with
+editable tables, embedded figures, and clickable URLs in the APA references.
 
 The final report is [Technical_Report.docx](report/Technical_Report.docx).
 
@@ -27,15 +27,17 @@ transformers or repeat hardware measurements. Additional CV is optional and disa
 
 ```powershell
 python -m src.review
+python -m src.data_quality
 python report/build_report.py
 python notebooks/build_notebook.py
 python -m jupyter nbconvert --to notebook --execute --inplace notebooks/Transformer_Model_Evaluation.ipynb --ExecutePreprocessor.timeout=600
 ```
 
 Edit the authoring source at `src/report_template.md`, then run `python report/build_report.py`
-to update the Word report. The builder produces one report file with embedded charts
-and editable tables. The report retains its required abstract; the notebook omits that
-section and contains six output-focused final-insight bullets totaling 300 words.
+to update the Word report after running the data-quality audit. The builder reorganizes
+the shared evidence into a technical report and produces one report file. Close that
+file in Word before rebuilding. The notebook keeps the eight-step format, omits the
+abstract, and contains six final-insight bullets totaling 300 words.
 
 ## Reproduce the original experiments
 
@@ -58,6 +60,7 @@ python -m src.explain --transformer pubmedbert
 python -m src.pipeline_figure
 python -m src.analysis
 python -m src.review
+python -m src.data_quality
 python report/build_report.py
 python notebooks/build_notebook.py
 python -m jupyter nbconvert --to notebook --execute --inplace notebooks/Transformer_Model_Evaluation.ipynb --ExecutePreprocessor.timeout=600
@@ -83,5 +86,8 @@ script. Hardware timing is specific to the supplied records.
 - Raw data, trained model weights, caches, and MLflow artifacts are excluded by `.gitignore`.
   A clean clone needs those artifacts or a new training run. Saved probabilities and tables
   allow substantial evaluation reuse without redoing training.
+- `results/data_quality_audit.json` records missingness, blank text, duplicate and split
+  overlap checks, label validation, and input hashes. It also records 12 punctuation-only
+  repeat-normalization differences; the original benchmark inputs remain unchanged.
 - MLflow can be inspected with `mlflow ui --backend-store-uri sqlite:///mlflow.db`.
   At review, 18 run records were FINISHED and one remained RUNNING.

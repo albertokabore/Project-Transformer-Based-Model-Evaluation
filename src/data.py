@@ -1,12 +1,11 @@
 """Data loading, label resolution, PHI scrubbing, normalization and splitting for MTSamples.
 
-Design decisions (see report, Section 3.1):
+Design decisions (see the report's data collection and cleaning subsection):
 * MTSamples files the *same* transcription under several categories (e.g. "Surgery" and
   "Orthopedic"). Of 4,966 non-empty rows only 2,357 transcriptions are unique. A naive row-level
   split therefore leaks identical documents between train and test. We group by text first.
-* Several categories describe a *document type* or *modality* rather than a clinical specialty
-  (Surgery, Consult, SOAP, Discharge Summary, Radiology, ...). They are removed from each
-  document's label set; a document is kept only if exactly one specialty remains.
+* Ten categories are excluded by an explicit benchmark label policy, including document types
+  and legitimate clinical fields. A document is kept only if exactly one retained label remains.
 * Specialties with fewer than ``MIN_DOCS`` unique documents are excluded from the in-distribution
   task and their documents form an out-of-distribution (OOD) evaluation set.
 """
@@ -131,11 +130,15 @@ class Splits:
 
 def build_dataset(save: bool = True) -> Splits:
     df = pd.read_csv(RAW)
+    required = {"medical_specialty", "transcription"}
+    if not required.issubset(df.columns):
+        raise ValueError(f"Missing raw-data columns: {sorted(required - set(df.columns))}")
     stats: dict = {"raw_rows": int(len(df)), "raw_categories": int(df.medical_specialty.nunique())}
-    df = df.dropna(subset=["transcription"]).copy()
-    stats["rows_with_text"] = int(len(df))
+    df = df.dropna(subset=["transcription", "medical_specialty"]).copy()
     df["medical_specialty"] = df.medical_specialty.str.strip()
     df["raw_text"] = df.transcription.str.strip()
+    df = df[df.raw_text.ne("") & df.medical_specialty.ne("")].copy()
+    stats["rows_with_text"] = int(len(df))
 
     grouped = df.groupby("raw_text").medical_specialty.agg(lambda s: sorted(set(s))).reset_index()
     stats["unique_transcriptions"] = int(len(grouped))
@@ -154,7 +157,8 @@ def build_dataset(save: bool = True) -> Splits:
 
     def _prep(frame: pd.DataFrame) -> pd.DataFrame:
         frame = frame.copy()
-        frame["text"] = [normalize(scrub_phi(t, phi_counter), norm_counter) for t in frame.raw_text]
+        frame["text"] = pd.Series([normalize(scrub_phi(t, phi_counter), norm_counter) for t in frame.raw_text],
+                                  index=frame.index, dtype="object")
         frame["sex"] = frame.raw_text.apply(infer_sex)
         frame["age_group"] = frame.raw_text.apply(infer_age_group)
         frame["n_words"] = frame.text.str.split().str.len()
@@ -163,6 +167,8 @@ def build_dataset(save: bool = True) -> Splits:
     ind = _prep(single[single.label.isin(keep)])
     # After normalisation re-check exact duplicates (none expected, verified below)
     stats["post_norm_duplicates"] = int(ind.text.duplicated().sum())
+    if (ind.groupby("text").label.nunique() > 1).any():
+        raise ValueError("Normalization merged different retained labels; resolve the conflict before splitting.")
     ind = ind.drop_duplicates("text")
     ood = _prep(single[~single.label.isin(keep)])
     stats["ood_docs"] = int(len(ood))

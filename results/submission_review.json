@@ -4,11 +4,10 @@
   "report_sections_present": [
     "Abstract",
     "Introduction",
-    "Methodology and results",
+    "Methodology",
+    "Results",
     "Discussion",
-    "Final insights",
-    "Recommendations",
-    "Conclusions",
+    "Conclusion",
     "References"
   ],
   "notebook_abstract_present": false,
@@ -16,7 +15,7 @@
   "notebook_final_insight_word_count": 300,
   "observation_blocks": 8,
   "observation_words_per_block": 50,
-  "report_tables": 16,
+  "report_tables": 15,
   "report_embedded_figures": 11,
   "executed_notebook_code_cells": 9,
   "preserved_code_outputs_and_result_tables": true,
@@ -28,5 +27,12 @@
     "Fairness uses inferred demographic proxies with missingness and limited class coverage.",
     "Perturbations and keyword masking were not clinically verified to preserve meaning.",
     "No separate grading rubric was supplied."
-  ]
+  ],
+  "report_observation_bullets": 0,
+  "report_linked_APA_references": 17,
+  "notebook_observation_blocks": 8,
+  "data_quality_checks_passed": 77,
+  "cleaning_rebuilt_from_raw": true,
+  "cleaning_rebuild_preserved_input_hashes": true,
+  "report_sha256": "b01910a8ce95d8b602a472de7908367b358c99bd2df3af1946537efcdb4086f6"
 }
